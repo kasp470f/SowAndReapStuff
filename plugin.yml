@@ -1,0 +1,6 @@
+name: ReapAndSow
+version: 1.0
+author: me.blox
+main: blox.ReapAndSow.Main
+description: My first minecraft plugin
+api-version: 1.17
