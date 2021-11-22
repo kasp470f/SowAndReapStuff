@@ -84,7 +84,33 @@ public class Crop {
 			if(CropSeed != null) {
 				world.dropItemNaturally(location.getLocation(), new ItemStack(CropSeed, 1));
 			}
+			if(AdditionalDrops != null) {
+				boolean val = rand.nextInt(51)==0;
+				if(val == true) {
+					world.dropItemNaturally(location.getLocation(), new ItemStack(AdditionalDrops, 1));
+				}
+			}
 		}
+	}
+	
+	public void DropSeed(World world, Block location) {
+		if(CropSeed != null) {
+			ItemStack seed = new ItemStack(CropSeed, 1);
+			world.dropItemNaturally(location.getLocation(), seed);
+		} else {
+			ItemStack item = new ItemStack(CropItem, 1);
+			ItemMeta meta = item.getItemMeta();
+			ArrayList<String> lore = new ArrayList<String>();
+			
+			lore.add(ChatColor.DARK_GRAY + "Grade: Salvaged");
+			meta.setLore(lore);
+			item.setItemMeta(meta);
+			world.dropItemNaturally(location.getLocation(), item);
+		}
+	}
+	
+	private void GenerateYield() {
+		CropYield = rand.nextInt(CropMaxYield + 1 - CropMinYield) + CropMinYield;
 	}
 	
 	private void CreateGrade() {
@@ -109,11 +135,7 @@ public class Crop {
 			QualityColor = ChatColor.GOLD;
 		} else {
 			QualityName = "Ancient";
-			QualityColor = ChatColor.MAGIC;
+			QualityColor = ChatColor.BOLD;
 		}
-	}
-
-	private void GenerateYield() {
-		CropYield = rand.nextInt(CropMaxYield + 1 - CropMinYield) + CropMinYield;
 	}
 }

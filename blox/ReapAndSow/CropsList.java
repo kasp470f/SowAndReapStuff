@@ -31,6 +31,7 @@ public class CropsList {
 		// Potato
 		Crop potato = new Crop(Material.POTATOES, Material.POTATO);
 		potato.SetYield(1, 5);
+		potato.AdditionalDrops = Material.POISONOUS_POTATO;
 		AcceptableCrops.put(Material.POTATOES, potato);
 		
 		// Cocoa

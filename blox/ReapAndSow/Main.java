@@ -6,8 +6,6 @@ public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		System.out.println("Hello world");
-		
 		getServer().getPluginManager().registerEvents(new CropEvent(), this);
 	}
 }
