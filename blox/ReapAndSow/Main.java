@@ -8,6 +8,6 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		System.out.println("Hello world");
 		
-		getServer().getPluginManager().registerEvents(new BreakBlock(), this);
+		getServer().getPluginManager().registerEvents(new CropEvent(), this);
 	}
 }

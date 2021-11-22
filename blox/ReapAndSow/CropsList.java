@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.bukkit.Material;
 
-public class Crops {
+public class CropsList {
 	// <BlockBroken, Corresponding Crop>
 	public static Map<Material, Crop> AcceptableCrops;
 	
@@ -32,5 +32,20 @@ public class Crops {
 		Crop potato = new Crop(Material.POTATOES, Material.POTATO);
 		potato.SetYield(1, 5);
 		AcceptableCrops.put(Material.POTATOES, potato);
+		
+		// Cocoa
+		Crop cocoa = new Crop(Material.COCOA, Material.COCOA_BEANS);
+		cocoa.SetYield(3, 3);
+		AcceptableCrops.put(Material.COCOA, cocoa);
+		
+		// Pumpking
+		Crop pumpkin = new Crop(Material.PUMPKIN, Material.PUMPKIN);
+		pumpkin.SetYield(1, 1);
+		AcceptableCrops.put(Material.PUMPKIN, pumpkin);
+		
+		// Melon
+		Crop melon = new Crop(Material.MELON, Material.MELON_SLICE);
+		melon.SetYield(3, 9);
+		AcceptableCrops.put(Material.MELON, melon);
 	}
 }

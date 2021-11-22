@@ -6,15 +6,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-public class BreakBlock implements Listener {
+public class CropEvent implements Listener {
 	
 	@EventHandler
 	public void onPlayerBreakBlock(BlockBreakEvent event) {
 		Block blockBroken = event.getBlock();
-		System.out.println(blockBroken.getType());
 		World blockWorld = blockBroken.getWorld();
-		if(Crops.AcceptableCrops.containsKey(blockBroken.getType())) {
-			Crop cropBroken = Crops.AcceptableCrops.get(blockBroken.getType());
+		if(CropsList.AcceptableCrops.containsKey(blockBroken.getType())) {
+			Crop cropBroken = CropsList.AcceptableCrops.get(blockBroken.getType());
 			
 			//Remove crop
 			event.setCancelled(true);
